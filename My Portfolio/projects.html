@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEVVIE-LIVVIE | Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            dark: {
+              800: '#1e293b',
+              900: '#0f172a',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-in',
+            'slide-up': 'slideUp 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Link To CSS File -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-gray-50 dark:bg-dark-900 text-gray-800 dark:text-gray-200">
+
+  <!-- Floating Theme Toggle -->
+  <button id="theme-toggle" class="fixed bottom-12 right-6 z-50 w-12 h-12 rounded-full bg-primary-500 dark:bg-primary-700 shadow-lg flex items-center justify-center text-white hover:bg-primary-600 dark:hover:bg-primary-600 transition-all duration-300">
+    <i class="fas fa-moon dark:hidden"></i>
+    <i class="fas fa-sun hidden dark:block"></i>
+  </button>
+
+  <!-- Navbar -->
+  <nav class="bg-white/80 dark:bg-dark-800/80 backdrop-blur-md shadow-sm fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold">
+        <span class="gradient-text">LEVVIE-LIVVIE</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+          Home
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="about.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+          About
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="skills.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+          Skills
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="projects.html" class="font-medium text-primary-500 dark:text-primary-400 transition-colors relative group">
+          Projects
+          <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-500"></span>
+        </a>
+        <a href="blog.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+          Blog
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="contact.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+          Contact
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none">
+        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white dark:bg-dark-800 px-6">
+      <div class="flex flex-col space-y-4 py-4">
+        <a href="index.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+          Home
+        </a>
+        <a href="about.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+          About
+        </a>
+        <a href="skills.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+          Skills
+        </a>
+        <a href="projects.html" class="font-medium text-primary-500 dark:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+          Projects
+        </a>
+        <a href="blog.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+          Blog
+        </a>
+        <a href="contact.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2">
+          Contact
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <main class="min-h-screen pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          My <span class="gradient-text">Projects</span>
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          A collection of my work showcasing my skills and creativity across different technologies
+        </p>
+        <div class="w-24 h-1 bg-primary-500 mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-up">
+        <!-- Project 1 -->
+        <div class="project-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <img src="Images/bot_pic.png" alt="WhatsApp Bot" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">LEVVIE-LIVVIE WhatsApp Bot</h3>
+            <div class="flex flex-wrap mb-3">
+              <span class="tech-tag bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200">Node.js</span>
+              <span class="tech-tag bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200">Whatsapp-Web.js</span>
+              <span class="tech-tag bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200">AI Chat</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              An advanced WhatsApp bot featuring AI-powered conversations, automated media sharing, and interactive games. Built with Node.js and Whatsapp-Web.js for connectivity.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="#" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <img src="Images/potfolio-template.png" alt="Portfolio Template" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">PORTFOLIO TEMPLATE</h3>
+            <div class="flex flex-wrap mb-3">
+              <span class="tech-tag bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200">HTML/CSS</span>
+              <span class="tech-tag bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200">JavaScript</span>
+              <span class="tech-tag bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">Bootstrap</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              A sleek, modern portfolio template featuring responsive design, elegant dark mode toggle, and smooth animations. Perfect for developers and designers to showcase their work professionally.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://levvie-livvie-portfolio.vercel.app" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a href="https://github.com/Levisonmsachi/levvie-livvie-portfolio" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <img src="Images/another-tech-pic.avif" alt="Inventory System" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Inventory Management System</h3>
+            <div class="flex flex-wrap mb-3">
+              <span class="tech-tag bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-200">Java</span>
+              <span class="tech-tag bg-orange-100 dark:bg-orange-900/50 text-orange-800 dark:text-orange-200">Swing</span>
+              <span class="tech-tag bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200">MySQL</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              A comprehensive inventory management solution built with Java Swing, featuring product tracking, stock management, and reporting capabilities. Demonstrates strong OOP principles and database integration.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://github.com/Levisonmsachi/Inventory-Management-System-With-JavaSwing" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a href="https://github.com/Levisonmsachi/Inventory-Management-System-With-JavaSwing" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <img src="Images/technology-pic.avif" alt="Banking System" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Banking System</h3>
+            <div class="flex flex-wrap mb-3">
+              <span class="tech-tag bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200">C</span>
+              <span class="tech-tag bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200">File I/O</span>
+              <span class="tech-tag bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200">CLI</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              A command-line banking application developed in C, featuring account management, transaction processing, and balance tracking. Highlights my understanding of core programming concepts and memory management.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://github.com/Levisonmsachi/BANKING-SYSTEM-IN-C" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a href="https://github.com/Levisonmsachi/BANKING-SYSTEM-IN-C" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <img src="Images/bruteforce-pic.png" alt="Security Tool" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Brute Force Attack Simulator</h3>
+            <div class="flex flex-wrap mb-3">
+              <span class="tech-tag bg-green-100 dark:bg-green-900/50 text-green-800 dark:text-green-200">Python</span>
+              <span class="tech-tag bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-200">Security</span>
+              <span class="tech-tag bg-purple-100 dark:bg-purple-900/50 text-purple-800 dark:text-purple-200">Ethical Hacking</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              A Python-based security tool demonstrating brute force attack principles. Developed for educational purposes to highlight password security importance. Features dictionary attacks and performance metrics.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="#" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <img src="Images/forlio-temp.png" alt="Personal Portfolio" class="w-full project-image">
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2">Personal Portfolio</h3>
+            <div class="flex flex-wrap mb-3">
+              <span class="tech-tag bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200">HTML/CSS</span>
+              <span class="tech-tag bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200">JavaScript</span>
+              <span class="tech-tag bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200">Tailwind CSS</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              My personal portfolio website showcasing my projects, skills, and professional journey. Features responsive design, dark mode, and interactive elements. Built with modern web technologies for optimal performance.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="https://github.com/Levisonmsachi" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                View Project <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <a href="https://github.com/Levisonmsachi" class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700 py-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <a href="index.html" class="text-2xl font-bold">
+            <span class="gradient-text">LEVVIE-LIVVIE</span>
+          </a>
+          <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
+            Building innovative digital experiences with clean code and stunning visuals.
+          </p>
+        </div>
+        
+        <div class="flex space-x-6">
+            <a href="https://github.com/Levisonmsachi" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="https://wa.me/265887071763?text=Hello%20LEVVIE-LIVVIE,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20chat me-on-whatsapp" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+              <i class="fab fa-whatsapp text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-2xl">
+              <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://t.me/levvielivvie" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-2xl">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>© 2025 LEVVIE-LIVVIE. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link To JavaScript File -->
+  <script src="index.js"></script>
+</body>
+</html>
