@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEVVIE-LIVVIE | Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            },
+            dark: {
+              800: '#1e293b',
+              900: '#0f172a',
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-in',
+            'slide-up': 'slideUp 0.5s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Link To CSS File -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-gray-50 dark:bg-dark-900 text-gray-800 dark:text-gray-200">
+
+  <!-- Floating Theme Toggle -->
+  <button id="theme-toggle" class="fixed bottom-12 right-6 z-50 w-12 h-12 rounded-full bg-primary-500 dark:bg-primary-700 shadow-lg flex items-center justify-center text-white hover:bg-primary-600 dark:hover:bg-primary-600 transition-all duration-300">
+    <i class="fas fa-moon dark:hidden"></i>
+    <i class="fas fa-sun hidden dark:block"></i>
+  </button>
+
+  <!-- Navbar -->
+  <nav class="bg-white/80 dark:bg-dark-800/80 backdrop-blur-md shadow-sm fixed w-full z-10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold">
+        <span class="gradient-text">LEVVIE-LIVVIE</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex space-x-8">
+        <a href="index.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+          Home
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="about.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+          About
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="skills.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+          Skills
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+
+        <a href="projects.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+            Projects
+            <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+
+        <a href="blog.html" class="font-medium text-primary-500 dark:text-primary-400 transition-colors relative group">
+          Blog
+          <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-500"></span>
+        </a>
+        <a href="contact.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors relative group">
+          Contact
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none">
+        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu md:hidden bg-white dark:bg-dark-800 px-6">
+      <div class="flex flex-col space-y-4 py-4">
+        <a href="index.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+          Home
+        </a>
+        <a href="about.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+          About
+        </a>
+        <a href="skills.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+          Skills
+        </a>
+
+        <a href="projects.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+            Projects
+        </a>
+        <a href="blog.html" class="font-medium text-primary-500 dark:text-primary-400 transition-colors py-2 border-b border-gray-200 dark:border-gray-700">
+          Blog
+        </a>
+        <a href="contact.html" class="font-medium hover:text-primary-500 dark:hover:text-primary-400 transition-colors py-2">
+          Contact
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Section -->
+  <main class="min-h-screen pt-32 pb-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          My <span class="gradient-text">Blog</span>
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          Sharing knowledge, experiences, and insights from my journey in technology
+        </p>
+        <div class="w-24 h-1 bg-primary-500 mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-up">
+        <!-- Blog Card 1 -->
+        <div class="blog-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <div class="h-48 bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+            <i class="fas fa-shield-alt text-white text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-semibold text-primary-500 dark:text-primary-400">CYBERSECURITY</span>
+              <span class="read-time">5 min read</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Journey to Cybersecurity Mastery</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              My transformative journey from novice to cybersecurity enthusiast. Discover how I overcame initial hurdles, the resources that helped me most, and key mindset shifts that accelerated my learning. I'll share practical tips for building your own home lab and the most valuable certifications to pursue.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="#" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                Read More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <span class="text-xs text-gray-500 dark:text-gray-400">May 15, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 2 -->
+        <div class="blog-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+            <i class="fab fa-python text-white text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-semibold text-primary-500 dark:text-primary-400">PROGRAMMING</span>
+              <span class="read-time">8 min read</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Mastering Python Automation</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              How I automated my workflow and saved 10+ hours per week using Python. This deep dive covers my favorite libraries (BeautifulSoup, Pandas, Selenium), common automation patterns, and how to structure your automation projects for maintainability. Learn from my mistakes and discover advanced techniques like error handling and scheduling.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="#" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                Read More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <span class="text-xs text-gray-500 dark:text-gray-400">April 28, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 3 -->
+        <div class="blog-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-600 flex items-center justify-center">
+            <i class="fas fa-code text-white text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-semibold text-primary-500 dark:text-primary-400">WEB DEVELOPMENT</span>
+              <span class="read-time">6 min read</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Building My First Production Web App</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                From concept to deployment: I'm planning to document the complete journey of building and launching my first web application. I'll share the tech stack I'm considering (React + Node.js + MongoDB), anticipate potential challenges, and explore performance optimization techniques that could make a difference. I plan to include before/after code comparisons and architecture diagrams once the project is complete.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="#" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                Read More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <span class="text-xs text-gray-500 dark:text-gray-400">March 10, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 4 -->
+        <div class="blog-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center">
+            <i class="fas fa-network-wired text-white text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-semibold text-primary-500 dark:text-primary-400">NETWORKING</span>
+              <span class="read-time">7 min read</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Home Networking Lab Setup Guide</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              Building a professional-grade networking lab on a student budget. I'm planning to create a comprehensive guide covering equipment selection, virtualization options, and practical exercises to develop real networking skills. I'll share my favorite Cisco Packet Tracer alternatives and demonstrate how to simulate complex network scenarios without expensive hardware.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="#" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                Read More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <span class="text-xs text-gray-500 dark:text-gray-400">February 22, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 5 -->
+        <div class="blog-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <div class="h-48 bg-gradient-to-r from-yellow-500 to-orange-600 flex items-center justify-center">
+            <i class="fas fa-graduation-cap text-white text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-semibold text-primary-500 dark:text-primary-400">EDUCATION</span>
+              <span class="read-time">9 min read</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Balancing University and Tech Learning</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              My proven system for maximizing learning while maintaining academic excellence. This post reveals my time management framework, how I align coursework with personal projects, and strategies for staying motivated. Includes my favorite productivity tools and techniques for efficient studying in STEM fields.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="#" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                Read More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <span class="text-xs text-gray-500 dark:text-gray-400">January 15, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Card 6 -->
+        <div class="blog-card bg-white dark:bg-dark-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+          <div class="h-48 bg-gradient-to-r from-red-500 to-pink-600 flex items-center justify-center">
+            <i class="fas fa-laptop-code text-white text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-semibold text-primary-500 dark:text-primary-400">CAREER</span>
+              <span class="read-time">10 min read</span>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Breaking Into Tech Without Experience</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+              How I built a compelling portfolio that got me noticed by recruiters. This actionable guide covers project selection, documentation best practices, and how to showcase your work effectively. Learn how to identify marketable skills, create case studies, and network your way into the industry as a self-taught developer.
+            </p>
+            <div class="flex justify-between items-center">
+              <a href="#" class="text-primary-500 dark:text-primary-400 font-medium hover:underline flex items-center">
+                Read More <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+              <span class="text-xs text-gray-500 dark:text-gray-400">December 5, 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-dark-800 border-t border-gray-200 dark:border-gray-700 py-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <a href="index.html" class="text-2xl font-bold">
+            <span class="gradient-text">LEVVIE-LIVVIE</span>
+          </a>
+          <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">
+            Building innovative digital experiences with clean code and stunning visuals.
+          </p>
+        </div>
+        
+        <div class="flex space-x-6">
+            <a href="https://github.com/Levisonmsachi" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="https://wa.me/265887071763?text=Hello%20LEVVIE-LIVVIE,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20chat me-on-whatsapp" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+              <i class="fab fa-whatsapp text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-2xl">
+              <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://t.me/levvielivvie" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors text-2xl">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+        <p>© 2025 LEVVIE-LIVVIE. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
