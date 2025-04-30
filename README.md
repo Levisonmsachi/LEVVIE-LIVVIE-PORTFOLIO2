@@ -1,6 +1,6 @@
 # 🌟 LEVVIE-LIVVIE Portfolio
 
-![Portfolio Screenshot](./screenshot.png) <!-- Add a screenshot of your portfolio -->
+![Portfolio Screenshot](https://github.com/Levisonmsachi/LEVVIE-LIVVIE-PORTFOLIO2/blob/main/Screenshot.png)
 
 A modern, responsive portfolio website showcasing my skills, projects, and professional journey as a Software Engineer and Cybersecurity Enthusiast.
 
