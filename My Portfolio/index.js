@@ -153,14 +153,3 @@ emailjs.send('service_0v2o1b7', 'template_tbl72fg', formData)
     submitBtn.disabled = false;
   });
 });
-
-
-
-  // View More functionality for all blog cards
-  document.querySelectorAll('.view-more-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const container = button.closest('.blog-card');
-      container.classList.toggle('show-full');
-      button.textContent = container.classList.contains('show-full') ? 'View Less' : 'View More';
-    });
-  });
