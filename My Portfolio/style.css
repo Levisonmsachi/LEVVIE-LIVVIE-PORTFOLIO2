@@ -166,20 +166,3 @@ animation: fadeIn 0.3s ease-out forwards;
 .animate-fade-out {
 animation: fadeOut 0.3s ease-out forwards;
 }
-
-
-
-/* BLOG VIEW MORE BUTTONS */
-
-.truncated-text {
-  display: block;
-}
-.full-text {
-  display: none;
-}
-.show-full .truncated-text {
-  display: none;
-}
-.show-full .full-text {
-  display: block;
-}
