@@ -40,8 +40,34 @@
       }
     }
   </script>
-  <!-- Link To CSS File -->
-   <link rel="stylesheet" href="style.css">
+  <style>
+    .gradient-text {
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .mobile-menu.open {
+      max-height: 500px;
+    }
+    .truncated-text {
+      display: block;
+    }
+    .full-text {
+      display: none;
+    }
+    .show-full .truncated-text {
+      display: none;
+    }
+    .show-full .full-text {
+      display: block;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 dark:bg-dark-900 text-gray-800 dark:text-gray-200">
 
@@ -307,6 +333,40 @@
     </div>
   </footer>
 
-  <script src="index.js"></script>
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      menuIcon.classList.toggle('fa-bars');
+      menuIcon.classList.toggle('fa-times');
+    });
+
+    // View More functionality for all blog cards
+    document.querySelectorAll('.view-more-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const container = button.closest('.blog-card');
+        container.classList.toggle('show-full');
+        button.textContent = container.classList.contains('show-full') ? 'View Less' : 'View More';
+      });
+    });
+
+  </script>
 </body>
 </html>
